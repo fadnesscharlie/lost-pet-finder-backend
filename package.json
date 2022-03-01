@@ -1,0 +1,29 @@
+{
+  "name": "lost-pet-finder-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Floof-Finders/lost-pet-finder-backend.git"
+  },
+  "author": {
+    "name": "mark t", 
+    "name": "charlie f", 
+    "name": "vbchomp" 
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Floof-Finders/lost-pet-finder-backend/issues"
+  },
+  "homepage": "https://github.com/Floof-Finders/lost-pet-finder-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  }
+}
