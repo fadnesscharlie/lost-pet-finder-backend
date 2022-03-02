@@ -28,7 +28,6 @@ app.get('/', (req, res) => {
 app.use('*', notFound);
 app.use(errorHandler);
 
-
 // Start
 module.exports = {
   server: app,
