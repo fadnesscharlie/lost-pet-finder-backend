@@ -4,18 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=development node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Floof-Finders/lost-pet-finder-backend.git"
   },
-  "author": {
-    "name": "mark t", 
-    "name": "charlie f", 
-    "name": "vbchomp" 
-  },
+  "author": "MarkT, fadnesscharlies, vbchomp",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Floof-Finders/lost-pet-finder-backend/issues"
@@ -24,6 +21,12 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "sequelize": "^6.17.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.2"
   }
 }
