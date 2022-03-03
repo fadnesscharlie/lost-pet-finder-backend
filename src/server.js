@@ -24,6 +24,16 @@ app.get('/', (req, res) => {
   res.status(200).send('You have reached the Wizard!');
 });
 
+// Post Route
+// Post animal data and save to database
+app.post('/pet-creation', (req, res, next) => {
+  let petData = req.body
+  console.log('petData', petData)
+})
+
+
+
+
 // Catchalls
 app.use('*', notFound);
 app.use(errorHandler);
