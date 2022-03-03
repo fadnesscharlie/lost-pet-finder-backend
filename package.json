@@ -6,13 +6,13 @@
   "scripts": {
     "start": "NODE_ENV=production node index.js",
     "dev": "NODE_ENV=development node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Floof-Finders/lost-pet-finder-backend.git"
   },
-  "author": "MarkT, fadnesscharlies, vbchomp",
+  "author": "markjackson28, fadnesscharlies, vbchomp",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Floof-Finders/lost-pet-finder-backend/issues"

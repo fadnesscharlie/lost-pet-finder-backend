@@ -26,7 +26,7 @@ const petModel = (sequelize, DataTypes) => {
       type: DataTypes.BLOB,
     },
     age: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
     },
     breed: {
       type: DataTypes.STRING,
@@ -42,10 +42,9 @@ const petModel = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
     },
     reward: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
     }
   });
 };
-
 
 module.exports = petModel;

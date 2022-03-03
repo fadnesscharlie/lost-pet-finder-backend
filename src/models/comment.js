@@ -1,7 +1,6 @@
 'use strict';
 
 require('dotenv').config();
-// const uuid = require('uuid/v4');
 
 const commentModel = (sequelize, DataTypes) => {
   const model = sequelize.define('Comments', {
@@ -18,8 +17,8 @@ const commentModel = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       required: true
     }, 
-    PetId: {  
-      type: DataTypes.NUMBER,  
+    petId: {  
+      type: DataTypes.INTEGER,  
     },
     reply: {  
       type: DataTypes.BOOLEAN,

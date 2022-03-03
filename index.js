@@ -9,6 +9,7 @@ const { db } = require('./src/models/index.js');
 
 const server = require('./src/server.js');
 
+// connect to db and start server
 db.sync()
   .then(() => {
     server.start(process.env.PORT || 3005)
