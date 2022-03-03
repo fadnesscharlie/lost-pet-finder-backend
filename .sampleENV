@@ -1,0 +1,4 @@
+PORT=<portnumberhere>
+DATABASE_URL=<databaseOS>://localhost:<portnumberofdb>/<dbname>
+SECRET=<secrethere>
+
