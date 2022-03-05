@@ -18,7 +18,7 @@ const commentModel = (sequelize, DataTypes) => {
       required: true
     }, 
     petId: {  
-      type: DataTypes.INTEGER,  
+      type: DataTypes.UUID,  
     },
     reply: {  
       type: DataTypes.BOOLEAN,
