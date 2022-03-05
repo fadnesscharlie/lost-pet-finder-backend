@@ -24,6 +24,7 @@ const commentModel = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
     }  
   });
+  return model
 };
 
 

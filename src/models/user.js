@@ -29,6 +29,7 @@ const userModel = (sequelize, DataTypes) => {
       type: DataTypes.BLOB,  
     }
   });
+  return model
 };
 
 module.exports = userModel;

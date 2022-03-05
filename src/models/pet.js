@@ -45,6 +45,7 @@ const petModel = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
     }
   });
+  return model
 };
 
 module.exports = petModel;
