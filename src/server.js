@@ -7,6 +7,11 @@ const cors = require('cors');
 // Route Imports
 const authRoutes = require('./auth/authRoutes')
 
+// Routes
+const userRoutes = require('./routes/user')
+const petRoutes = require('./routes/pet')
+const commentRoutes = require('./routes/comment')
+
 // Error Handlers
 const errorHandler = require('./error-handlers/500.js');
 const notFound = require('./error-handlers/404.js');
@@ -24,6 +29,11 @@ app.use(authRoutes);
 app.get('/', (req, res) => { 
   res.status(200).send('You have reached the Wizard!');
 });
+
+// Routes
+app.use(userRoutes)
+app.use(petRoutes)
+app.use(commentRoutes)
 
 // Catchalls
 app.use('*', notFound);
