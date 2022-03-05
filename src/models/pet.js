@@ -31,6 +31,9 @@ const petModel = (sequelize, DataTypes) => {
     breed: {
       type: DataTypes.STRING,
     },
+    medicalConditions: {
+      type: DataTypes.STRING,
+    },
     lostLocation: {
       type: DataTypes.STRING,
       required: true,
