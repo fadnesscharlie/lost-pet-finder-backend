@@ -44,6 +44,9 @@ const petModel = (sequelize, DataTypes) => {
     trackerChip: {
       type: DataTypes.BOOLEAN,
     },
+    lostOrFound: {
+      type: DataTypes.BOOLEAN,
+    },
     reward: {
       type: DataTypes.INTEGER,
     }
