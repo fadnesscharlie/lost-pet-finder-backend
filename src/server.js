@@ -7,6 +7,11 @@ const cors = require('cors');
 // Middleware
 
 
+// Routes
+const userRoutes = require('./routes/user')
+const petRoutes = require('./routes/pet')
+const commentRoutes = require('./routes/comment')
+
 // Error Handlers
 const errorHandler = require('./error-handlers/500.js');
 const notFound = require('./error-handlers/404.js');
@@ -24,15 +29,10 @@ app.get('/', (req, res) => {
   res.status(200).send('You have reached the Wizard!');
 });
 
-// Post Route
-// Post animal data and save to database
-app.post('/pet-creation', (req, res, next) => {
-  let petData = req.body
-  console.log('petData', petData)
-})
-
-
-
+// Routes
+app.use(userRoutes)
+app.use(petRoutes)
+app.use(commentRoutes)
 
 // Catchalls
 app.use('*', notFound);
