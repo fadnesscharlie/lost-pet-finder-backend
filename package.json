@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/Floof-Finders/lost-pet-finder-backend#readme",
   "dependencies": {
+    "base-64": "^1.0.0",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
     "pg": "^8.7.3",
     "sequelize": "^6.17.0",
     "uuid": "^8.3.2"

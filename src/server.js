@@ -4,8 +4,8 @@
 const express = require('express');
 const cors = require('cors');
 
-// Middleware
-
+// Route Imports
+const authRoutes = require('./auth/authRoutes')
 
 // Routes
 const userRoutes = require('./routes/user')
@@ -23,7 +23,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes 
+// Routes
+app.use(authRoutes);
 // modularize later
 app.get('/', (req, res) => { 
   res.status(200).send('You have reached the Wizard!');
