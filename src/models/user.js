@@ -18,19 +18,23 @@ const userModel = (sequelize, DataTypes) => {
     username: {
       type: DataTypes.STRING,
       required: true,
-      unique: true
     },
     firstName: {
       type: DataTypes.STRING,
-      required: true,
+      required: false,
     },
     lastName: {
       type: DataTypes.STRING,
-      required: true,
+      required: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      required: false,
+      unique: true,
     },
     password: {
       type: DataTypes.STRING,
-      required: true
+      required: false,
     },
     token: {
       type: DataTypes.VIRTUAL,
