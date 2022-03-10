@@ -29,6 +29,9 @@ app.use(authRoutes);
 app.get('/', (req, res) => { 
   res.status(200).send('You have reached the Wizard!');
 });
+app.get('/bad', (req, res) => {
+  res.status(404).send({notFound})
+})
 
 // Routes
 app.use(userRoutes)
