@@ -8,14 +8,20 @@ const request = supertest(server);
 
 describe('Given /bad', () => {
   describe('When GET', () => {
-    it('Then returns a 400 status', async () => {
-      const response = await request.get('/bad');
+    it('Then returns a 404 status', async () => {
+      const response = await request.get('/tomato');
       expect(response.status).toEqual(404);
     });
+  })
+})
 
-    // it('Then returns correct response body', async () => {
-    //   const response = await request.get('/bad');
-    //   expect(response.text).toEqual('You have reached the Wizard!');
-    // });
+describe('Given /comment-info', () => {
+  describe('When GET', () => {
+    it('Then returns a 500 status', async () => {
+      const response2 = await request.get('/comment-info');
+      expect(response2.status).toEqual(500);
+    });
+
+    
   })
 })

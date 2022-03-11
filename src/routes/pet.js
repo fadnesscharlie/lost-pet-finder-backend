@@ -23,7 +23,7 @@ async function createPet(req, res) {
   try {
     let petData = req.body
     let postPet = await pets.create(petData)
-    res.status(200).json(postPet)
+    res.status(201).json(postPet)
   } catch (e) {
     res.status(500).send('Create Pet Error')
   }
