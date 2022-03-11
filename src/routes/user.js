@@ -102,6 +102,7 @@ async function updateUser(req, res) {
 	} catch (e) {
 		res.status(500).send('Update User Error', e);
 	}
+
 }
 
 module.exports = router;

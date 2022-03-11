@@ -22,13 +22,15 @@ async function getPetData(req, res) {
 }
 
 async function createPet(req, res) {
-	try {
-		let petData = req.body;
-		let postPet = await pets.create(petData);
-		res.status(200).json(postPet);
-	} catch (e) {
-		res.status(500).send('Create Pet Error');
-	}
+
+  try {
+    let petData = req.body
+    let postPet = await pets.create(petData)
+    res.status(201).json(postPet)
+  } catch (e) {
+    res.status(500).send('Create Pet Error')
+  }
+
 }
 
 async function updatePet(req, res) {
