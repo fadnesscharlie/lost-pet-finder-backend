@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 
-const { users } = require('../models/index')
+const { users } = require('../models/index');
 
 // all of this came from jsonwebtoken docs
 // ---------------------------------------
@@ -22,9 +22,11 @@ const { users } = require('../models/index')
 // }
 // ---------------------------------------
 
-router.post('/user-creation', createUser)
+router.post('/user-creation', createUser);
 
-router.get('/user-info', getUserData)
+router.get('/user-info', getUserData);
+
+router.put('/user-update/:id', updateUser);
 
 // router.get('landing', sendUserData)
 
@@ -42,25 +44,65 @@ router.get('/user-info', getUserData)
 //   }
 // }
 
-async function getUserData (req, res) {
-  try {
-    let allUsers = await users.findAll()
-    res.status(200).json(allUsers)
-  } catch (e) {
-    res.status(500).send('Get User Error')
-  }
+async function getUserData(req, res) {
+	try {
+		let allUsers = await users.findAll();
+		res.status(200).json(allUsers);
+	} catch (e) {
+		res.status(500).send('Get User Error');
+	}
 }
 
 async function createUser(req, res) {
-  try {
-    let userData = req.body
-    // console.log('User Data', userData)
-    let postUser = await users.create(userData)
-    // console.log('User Dataed', postUser)
-    res.status(201).send(postUser)
-  } catch (e) {
-    res.status(500);
-  }
+	try {
+		let userData = req.body;
+		console.log('User Data', userData);
+		let postUser = await users.create(userData);
+		console.log('User Dataed', postUser);
+		res.status(201).send(postUser);
+	} catch (e) {
+		res.status(500).send('Error', e);
+	}
 }
 
-module.exports = router
+async function updateUser(req, res) {
+	try {
+		let id = req.params.id;
+		console.log('id:', id);
+		console.log('DATA BODY ---- ', req.body);
+    
+		const findUser = await users.findOne({ where: { userID: id } });
+    
+    console.log('findUser:', findUser);
+
+		let {
+			username,
+			firstName,
+			lastName,
+			role,
+			email,
+			profilePic,
+		} = req.body;
+		
+
+    let newUser = {
+			username,
+			firstName,
+			lastName,
+			role,
+			email,
+			profilePic,
+		}
+
+
+		let updatedUser = await findUser.update(newUser);
+		console.log('updatedUser:', updatedUser);
+
+		res.status(200).json(updatedUser);
+	} catch (e) {
+		res.status(500).send('Update User Error', e);
+	}
+
+}
+
+module.exports = router;
