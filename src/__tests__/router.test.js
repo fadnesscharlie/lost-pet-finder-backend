@@ -64,7 +64,7 @@ afterAll(async () => {
 });
 
 // / route
-describe('Given /', () => {
+xdescribe('Given /', () => {
   describe('When GET', () => {
     it('Then returns a 200 status', async () => {
       const response = await request.get('/');
@@ -79,7 +79,7 @@ describe('Given /', () => {
 });
 
 // /user-creation route
-describe('Give /user-creation', () => {
+xdescribe('Give /user-creation', () => {
   describe('When POST', () => {
     it('Then returns a 201 status', async () => {
       const response3 = await request.post('/user-creation');
@@ -113,7 +113,7 @@ describe('Give /user-creation', () => {
 });
 
 // /user-info route
-describe('Give /user-info', () => {
+xdescribe('Give /user-info', () => {
   describe('When GET', () => {
     it('Then returns a 200 status', async () => {
       const response2 = await request.get('/user-info');
@@ -134,7 +134,7 @@ describe('Give /user-info', () => {
 });
 
 // /pet-creation route
-describe('Give /pet-creation', () => {
+xdescribe('Give /pet-creation', () => {
   describe('When POST', () => {
     it('Then returns a 201 status', async () => {
       const response4 = await request.post('/pet-creation');
@@ -162,7 +162,7 @@ describe('Give /pet-creation', () => {
 });
 
 // /pet-info route
-describe('Give /pet-info', () => {
+xdescribe('Give /pet-info', () => {
   describe('When GET', () => {
     it('Then returns a 200 status', async () => {
       const response5 = await request.get('/pet-info');
@@ -182,7 +182,7 @@ describe('Give /pet-info', () => {
 });
 
 // /pet-update route
-describe('Give /pet-update', () => {
+xdescribe('Give /pet-update', () => {
   describe('When PUT', () => {
     it('Then returns a 200 status', async () => {
       const response6 = await request.put('/pet-update');
@@ -205,7 +205,7 @@ describe('Give /pet-update', () => {
 });
 
 // /comment-creation route
-describe('Give /comment-creation', () => {
+xdescribe('Give /comment-creation', () => {
   describe('When POST', () => {
     it('Then returns a 200 status', async () => {
       const response7 = await request.post('/comment-creation');
@@ -226,7 +226,7 @@ describe('Give /comment-creation', () => {
 });
 
 // /comment-info route
-describe('Give /comment-info', () => {
+xdescribe('Give /comment-info', () => {
   describe('When GET', () => {
     it('Then returns a 200 status', async () => {
       const response8 = await request.get('/comment-info');
