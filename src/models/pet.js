@@ -34,12 +34,9 @@ const petModel = (sequelize, DataTypes) => {
     medicalConditions: {
       type: DataTypes.STRING,
     },
-    lostLocation: {
-      type: DataTypes.STRING,
+    isLost: {
+      type: DataTypes.BOOLEAN,
       required: true,
-    },
-    lastLocation: {
-      type: DataTypes.STRING,
     },
     trackerChip: {
       type: DataTypes.BOOLEAN,
