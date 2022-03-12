@@ -29,15 +29,13 @@
 [![MIT License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
-<br />
 <!-- TODO ADD LOGO 
 <div align="center">
   <a href="https://github.com/Floof-Finders">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
--->
+  </a> -->
 
-# Floof Finders
+## Floof Finders
 
 <!-- TABLE OF CONTENTS -->
 <div>
@@ -57,9 +55,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
->An Application secured by Auth that allows the users to search through NFT's using OpenSea API, and save their favorite NFT or artist.
+>An Application secured by Auth that allows the users to post lost and found animals. Other users can post updates with Google Maps markers to show locations.
 
-<!-- TODO -->
 ## UML
 
 <img src="img/WF-Finalproject-backend.png" width="80%" height="auto">
@@ -81,10 +78,10 @@
 * [Sequelize](https://sequelize.org/)
 * [SQLite3](https://www.sqlite.org/)
 * [SuperTest](https://www.npmjs.com/package/supertest)
-<!-- * [Nock](https://www.npmjs.com/package/nock)
+* [Nock](https://www.npmjs.com/package/nock)
 * [PG](https://www.npmjs.com/package/pg)
-* [OpenSea API](https://docs.opensea.io/reference/api-overview) -->
 
+<!-- TODO -->
 ## Getting Started
 
 ```sh
@@ -168,14 +165,16 @@ axios.request(options).then(function (response) {
 <!-- TODO USAGE EXAMPLES  -->
 ## Usage
 
-Our application is to bring animals back to their owners in the fast way using technology and not having to rely specifically on friends and posters to post around town.
+Our application was developed to help bring animals back to their owners in the fastest way possible, using technology and not having to rely on word of mouth of friends and posters to post around town.
 
 ### Heroku Deployment
 
 [Heroku Deployment]()
 
+<!-- TODO -->
 ## Public Routes
 
+<!-- TODO -->
 ## Auth Routes
 
 ### Post: Register your account
@@ -191,6 +190,7 @@ ex.
   "username": "testUserName",
   "password": "testPassword",
 }
+```
 
 <!-- ROADMAP 
 ## Roadmap
@@ -263,6 +263,17 @@ Project Link: [https://github.com/Floof-Finders](https://github.com/Floof-Finder
 
 * [Socket.io Stack Overflow](https://stackoverflow.com/questions/62208654/notification-system-using-socket-io)
 * [push notifications with socket.io](https://hetaram37.medium.com/real-time-notifications-using-socket-io-nodejs-and-angular-ec2df283d00b)
+* [Jest IO](https://jestjs.io/docs/tutorial-react)
+* [Testing recipes](https://reactjs.org/docs/testing-recipes.html)
+* [Unit Test Token Verification for Auth0 using Jest and mock-jwks](https://codeburst.io/unit-test-token-verification-for-auth0-using-jest-and-mock-jwks-2c8488df97d6)
+* [A Practical Guide To Testing React Applications With Jest](https://www.smashingmagazine.com/2020/06/practical-guide-testing-react-applications-jest/)
+* [A Beginner's Guide to Unit-testing with Jest Part 1 & 2](https://dev.to/dsasse07/a-beginner-s-guide-to-unit-testing-with-jest-45cc)
+* [Quick Introductory SQL Concepts](https://dataschool.com/learn-sql/introduction/)
+* [Postgres Guide](https://www.postgresguide.com/utilities/psql/)
+* [Postgresql.org](https://www.postgresql.org/docs/9.1/app-createdb.html)
+* [How to set primary key type to UUID via Sequelize CLI](https://stackoverflow.com/questions/40734263/how-to-set-primary-key-type-to-uuid-via-sequelize-cli)
+* [Sequelize.org](https://sequelize.org/master/manual/legacy.html#foreign-keys)
+* [Auth0](https://manage.auth0.com/dashboard/us/dev-h-7-74qs/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -282,5 +293,3 @@ Project Link: [https://github.com/Floof-Finders](https://github.com/Floof-Finder
 [check-url]: https://github.com/Floof-Finders/lost-pet-finder-backend/actions/workflows/checks.yaml
 [codecov-sheild]: https://codecov.io/gh/Floof-Finders/lost-pet-finder-backend/branch/main/graph/badge.svg?token=7SL7D08EZB
 [codecov-url]: https://codecov.io/gh/Floof-Finders/lost-pet-finder-backend
-
-

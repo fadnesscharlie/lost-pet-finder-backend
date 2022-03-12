@@ -61,6 +61,7 @@ async function createUser(req, res) {
 		console.log('User Dataed', postUser);
 		res.status(201).send(postUser);
 	} catch (e) {
+		next
 		res.status(500).send('Error', e);
 	}
 }
