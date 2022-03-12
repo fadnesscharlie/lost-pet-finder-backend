@@ -56,9 +56,9 @@ async function getUserData(req, res) {
 async function createUser(req, res) {
 	try {
 		let userData = req.body;
-		console.log('User Data', userData);
+		// console.log('User Data', userData);
 		let postUser = await users.create(userData);
-		console.log('User Dataed', postUser);
+		// console.log('User Dataed', postUser);
 		res.status(201).send(postUser);
 	} catch (e) {
 		next

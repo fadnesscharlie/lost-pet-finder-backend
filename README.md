@@ -177,9 +177,17 @@ Our application was developed to help bring animals back to their owners in the 
 <!-- TODO -->
 ## Auth Routes
 
+## Sample.env
+
+```JavaScript
+PORT=<portnumberhere>
+DATABASE_URL=<databaseOS>://localhost:5432/<databasename>
+SECRET=<secretPWhere>
+```
+
 ### Post: Register your account
 
-```
+```JavaScript
 http://localhost:3006???????????????????????/register
 
 Pass in your desired username, password
