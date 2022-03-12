@@ -36,7 +36,6 @@ async function createPet(req, res) {
 async function updatePet(req, res) {
 	try {
 		let id = req.params.id;
-		console.log('id in updated pets route:', id);
 		let {
 			petName,
 			description,
@@ -46,7 +45,6 @@ async function updatePet(req, res) {
 			trackerChip,
 			reward,
 		} = req.body;
-		console.log('req.body in updated pets route:', req.body);
 		const updatedPet = await pets.findByIdAndUpdate(
 			id,
 			{
@@ -60,7 +58,6 @@ async function updatePet(req, res) {
 			},
 			{ new: true, overwrite: true }
 		);
-		console.log('updatedPet in update:', updatedPet);
 		res.status(200).json(updatedPet);
 	} catch (e) {
 		res.status(500).send('Update Error');

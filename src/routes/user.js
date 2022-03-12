@@ -56,12 +56,9 @@ async function getUserData(req, res) {
 async function createUser(req, res) {
 	try {
 		let userData = req.body;
-		// console.log('User Data', userData);
 		let postUser = await users.create(userData);
-		// console.log('User Dataed', postUser);
 		res.status(201).send(postUser);
 	} catch (e) {
-		next
 		res.status(500).send('Error', e);
 	}
 }
@@ -69,12 +66,9 @@ async function createUser(req, res) {
 async function updateUser(req, res) {
 	try {
 		let id = req.params.id;
-		console.log('id:', id);
-		console.log('DATA BODY ---- ', req.body);
     
 		const findUser = await users.findOne({ where: { userID: id } });
     
-    console.log('findUser:', findUser);
 
 		let {
 			username,
@@ -97,7 +91,6 @@ async function updateUser(req, res) {
 
 
 		let updatedUser = await findUser.update(newUser);
-		console.log('updatedUser:', updatedUser);
 
 		res.status(200).json(updatedUser);
 	} catch (e) {
