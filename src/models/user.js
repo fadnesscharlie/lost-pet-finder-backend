@@ -17,7 +17,7 @@ const userModel = (sequelize, DataTypes) => {
     },
     username: {
       type: DataTypes.STRING,
-      required: true,
+      // required: true,
     },
     firstName: {
       type: DataTypes.STRING,
@@ -30,7 +30,7 @@ const userModel = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING,
       required: false,
-      // unique: true,
+      unique: true,
     },
     password: {
       type: DataTypes.STRING,
