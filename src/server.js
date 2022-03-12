@@ -11,6 +11,7 @@ const authRoutes = require('./auth/authRoutes')
 const userRoutes = require('./routes/user')
 const petRoutes = require('./routes/pet')
 const commentRoutes = require('./routes/comment')
+const markerRoutes = require('./routes/marker')
 
 // Error Handlers
 const errorHandler = require('./error-handlers/500.js');
@@ -37,6 +38,7 @@ app.get('/bad', (req, res) => {
 app.use(userRoutes)
 app.use(petRoutes)
 app.use(commentRoutes)
+app.use(markerRoutes)
 
 // Catchalls
 app.use('*', notFound);
