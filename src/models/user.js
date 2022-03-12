@@ -17,7 +17,7 @@ const userModel = (sequelize, DataTypes) => {
     },
     username: {
       type: DataTypes.STRING,
-      required: true,
+      // required: true,
     },
     firstName: {
       type: DataTypes.STRING,
