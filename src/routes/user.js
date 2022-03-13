@@ -49,7 +49,7 @@ async function getUserData(req, res) {
 		let allUsers = await users.findAll();
 		res.status(200).json(allUsers);
 	} catch (e) {
-		res.status(500).send('Get User Error');
+		res.status(404).send('Get User Error');
 	}
 }
 
@@ -79,39 +79,13 @@ async function createUser(req, res) {
 async function updateUser(req, res) {
 	try {
 		let id = req.params.id;
-		console.log('id:', id);
-		console.log('DATA BODY ---- ', req.body);
-
 		const findUser = await users.findOne({ where: { userID: id } });
-
-		console.log('findUser:', findUser);
-
-		let {
-			username,
-			firstName,
-			lastName,
-			role,
-			email,
-			profilePic,
-		} = req.body;
-
-
-		let newUser = {
-			username,
-			firstName,
-			lastName,
-			role,
-			email,
-			profilePic,
-		}
-
-
-		let updatedUser = await findUser.update(newUser);
-		console.log('updatedUser:', updatedUser);
+    
+		let updatedUser = await findUser.update(req.body);
 
 		res.status(200).json(updatedUser);
 	} catch (e) {
-		res.status(500).send('Update User Error', e);
+		res.status(404).send('Update User Error', e);
 	}
 
 }
