@@ -56,10 +56,23 @@ async function getUserData(req, res) {
 async function createUser(req, res) {
 	try {
 		let userData = req.body;
-		let postUser = await users.create(userData);
-		res.status(201).send(postUser);
+		let currentUsers = await users.findAll();
+		if (currentUsers.length) {
+			currentUsers.forEach(async user => {
+				if (userData.email === user.dataValues.email) {
+					res.status(200).send('Prior user');
+				} else {
+					let postUser = await users.create(userData);
+					res.status(201).send(postUser);
+				}
+			})
+		} else {
+			let postUser = await users.create(userData);
+			res.status(201).send(postUser);
+		}
 	} catch (e) {
-		res.status(404).send('Error', e);
+		console.log(e);
+		res.status(500).send('Error', e);
 	}
 }
 
@@ -69,6 +82,7 @@ async function updateUser(req, res) {
 		const findUser = await users.findOne({ where: { userID: id } });
     
 		let updatedUser = await findUser.update(req.body);
+
 		res.status(200).json(updatedUser);
 	} catch (e) {
 		res.status(404).send('Update User Error', e);

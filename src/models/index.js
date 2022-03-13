@@ -5,6 +5,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 const userModel = require('./user.js');
 const petModel = require('./pet.js');
 const commentModel = require('./comment.js');
+const mapMarkerModel = require('./mapMarker.js');
 
 // heroku deployed production url
 const HEROKU_POSTGRESQL_GREEN_URL =
@@ -37,4 +38,5 @@ module.exports = {
   users: userModel(sequelize, DataTypes),
   pets: petModel(sequelize, DataTypes),
   comments: commentModel(sequelize, DataTypes),
+  markers: mapMarkerModel(sequelize, DataTypes)
 };
