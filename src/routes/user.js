@@ -62,7 +62,7 @@ async function createUser(req, res) {
 				if (userData.email === user.dataValues.email) {
 					res.status(200).send('Prior user');
 				} else {
-					let postUser = await users.create(userData);
+					let postUser = users.create(userData);
 					res.status(201).send(postUser);
 				}
 			})

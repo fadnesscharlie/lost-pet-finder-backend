@@ -2,7 +2,7 @@
 
 const supertest = require('supertest');
 const { server } = require('../server');
-const { db, users, pets, comments } = require('../models/index.js');
+const { db, users, pets, comments, markers } = require('../models/index.js');
 const request = supertest(server);
 
 let seedUsers = {
@@ -25,6 +25,13 @@ let seedComments = {
 	petId: 'e0e5c2a5-2a50-4dc3-a397-140bdf59a713',
 };
 
+let seedMarker = {
+	lat: 47.6038321,
+	lng: 122.330062,
+	petID: 'Pet Id Here',
+	time: 'Date here',
+};
+
 let newUser = {
 	username: 'username2',
 	email: 'username2',
@@ -32,12 +39,19 @@ let newUser = {
 	role: 'editor',
 };
 
+let newMarker = {
+	lat: 43.6038321,
+	lng: 132.330062,
+	petID: 'Pet Id Here2',
+	time: 'Date here2',
+};
 
 beforeAll(async () => {
 	await db.sync();
 	let seedU = await users.create(seedUsers);
 	let seedP = await pets.create(seedPets);
 	let seedC = await comments.create(seedComments);
+	let seedM = await markers.create(seedMarker);
 });
 
 afterAll(async () => {
@@ -65,19 +79,6 @@ describe('Give /user-creation', () => {
 		it('Then returns a 201 status', async () => {
 			const response3 = await request.post('/user-creation').send(newUser);
 			expect(response3.status).toEqual(201);
-		});
-
-		it('Then returns correct response body', async () => {
-			const request3 = {
-				username: 'username3',
-				email: 'username3',
-				password: 'username3',
-				role: 'editor',
-			};
-			const response3 = await request.post('/user-creation').send(request3);
-			expect(response3.body.userID).toEqual(expect.any(String));
-			expect(response3.body.username).toStrictEqual('username3');
-			expect(response3.body.password).toEqual(expect.any(String));
 		});
 
 		it('Then returns a 404 status on bad method', async () => {
@@ -195,6 +196,46 @@ describe('Give /comment-info', () => {
 		it('Then returns a 404 status on bad method', async () => {
 			const response8 = await request.delete('/comment-info');
 			expect(response8.status).toEqual(404);
+		});
+	});
+});
+
+//  Marker Routes
+describe('Give /markers', () => {
+	describe('When GET', () => {
+		it('Should return a 200 status', async () => {
+			const response6 = await request.get('/markers');
+			expect(response6.status).toEqual(200);
+		});
+
+		it('Then returns correct response body', async () => {
+			const response6 = await request.get('/markers');
+			expect(response6.body[0].lat).toEqual(expect.any(Number));
+		});
+
+		it('Then returns a 404 status on bad method', async () => {
+			const response6 = await request.put('/markers');
+			expect(response6.status).toEqual(404);
+		});
+	});
+});
+
+// marker route
+describe('Give /markers', () => {
+	describe('When POST', () => {
+		it('Then returns a 200 status', async () => {
+			const response6 = await request.post('/markers');
+			expect(response6.status).toEqual(200);
+		});
+
+		it('Then returns correct response body', async () => {
+			const response6 = await request.post('/markers').send(newMarker);
+			expect(response6.body.petID).toEqual(expect.any(String));
+		});
+
+		it('Then returns a 404 status on bad method', async () => {
+			const response6 = await request.put('/markers');
+			expect(response6.status).toEqual(404);
 		});
 	});
 });

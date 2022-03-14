@@ -18,7 +18,6 @@ describe('Given /comment-info', () => {
   describe('When GET', () => {
     it('Then returns a 500 status', async () => {
       const response2 = await request.post('/comment-info');
-      console.log('response2 ---------------', response2.status);
       expect(response2.status).toEqual(404);
     });
 

@@ -100,4 +100,22 @@ xdescribe('Auth Router can Create new Users', () => {
 			//   })
 		});
 	});
+
 });
+
+
+// user-creation routes
+	// it('Then returns correct response body', async () => {
+		// 	const request3 = {
+		// 		username: 'username3',
+		// 		userID: 'e0e5c2a5-2a50-4dc3-a397-140bdf59a713',
+		// 		email: 'username3',
+		// 		password: 'username3',
+		// 		role: 'editor',
+		// 	};
+		// 	const response3 = await request.post('/user-creation').send(request3);
+		// 	console.log('response3.body -----------------------------', response3.body);
+		// 	expect(response3.body.userID).toEqual(expect.any(UUID));
+		// 	expect(response3.body.username).toEqual('username3');
+		// 	expect(response3.body.password).toEqual(expect.any(String));
+		// });
