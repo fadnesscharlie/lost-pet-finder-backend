@@ -21,6 +21,10 @@ const notFound = require('./error-handlers/404.js');
 const app = express();
 
 // Use the middleware
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 // app.use(cors());
 app.use(express.json());
 
