@@ -2,7 +2,7 @@
 
 // 3rd Party
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 
 // Route Imports
 const authRoutes = require('./auth/authRoutes')
@@ -21,7 +21,7 @@ const notFound = require('./error-handlers/404.js');
 const app = express();
 
 // Use the middleware
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 // Routes
