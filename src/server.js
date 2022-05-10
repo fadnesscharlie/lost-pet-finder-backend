@@ -23,7 +23,8 @@ const app = express();
 // Use the middleware
 app.use(cors({
   origin: *,
-  header: "content-type", "application/json, "Access-Control-Allow-Headers",
+  header: ["content-type", "application/json"]
+  Access-Control-Allow-Headers: ["content-type", "application/json"],
   methods: ["GET", "POST"]
 }));
 app.use(express.json());
