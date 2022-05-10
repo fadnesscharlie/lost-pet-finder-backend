@@ -28,7 +28,7 @@ const app = express();
 // });
 
 app.use(cors({
-  origin: "https://lost-pet-finder-floof-finders.herokuapp.com"
+  origin: "https://lost-pet-app.netlify.app"
 }));
 
 app.use(express.json());
