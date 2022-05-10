@@ -2,7 +2,7 @@
 
 // 3rd Party
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 
 // Route Imports
 const authRoutes = require('./auth/authRoutes')
@@ -21,7 +21,16 @@ const notFound = require('./error-handlers/404.js');
 const app = express();
 
 // Use the middleware
-app.use(cors());
+// Creates your own cors middleware?
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   next();
+// });
+
+app.use(cors({
+  origin: "https://lost-pet-app.netlify.app"
+}));
+
 app.use(express.json());
 
 // Routes
