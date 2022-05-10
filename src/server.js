@@ -22,11 +22,14 @@ const app = express();
 
 // Use the middleware
 // Creates your own cors middleware?
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
-// app.use(cors());
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   next();
+// });
+app.use(cors({
+  origin: "https://lost-pet-finder-floof-finders.herokuapp.com"
+}));
+
 app.use(express.json());
 
 // Routes
