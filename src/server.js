@@ -21,11 +21,13 @@ const notFound = require('./error-handlers/404.js');
 const app = express();
 
 // Use the middleware
+
+app.options('*', cors())
+
+
 app.use(cors({
   origin: *,
-  header: ["content-type", "application/json"]
-  Access-Control-Allow-Headers: ["content-type", "application/json"],
-  methods: ["GET", "POST"]
+  methods: ["GET", "POST", "PUT"]
 }));
 app.use(express.json());
 
