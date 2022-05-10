@@ -22,7 +22,7 @@ const app = express();
 
 // Use the middleware
 app.use(cors({
-  origin: "https://lost-pet-app.netlify.app",
+  origin: *,
   methods: ["GET", "POST"]
 }));
 app.use(express.json());
