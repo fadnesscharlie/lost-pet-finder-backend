@@ -21,7 +21,9 @@ const notFound = require('./error-handlers/404.js');
 const app = express();
 
 // Use the middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://lost-pet-app.netlify.app/"
+}));
 app.use(express.json());
 
 // Routes
