@@ -26,6 +26,7 @@ const app = express();
 //   res.header('Access-Control-Allow-Origin', '*');
 //   next();
 // });
+
 app.use(cors({
   origin: "https://lost-pet-finder-floof-finders.herokuapp.com"
 }));
