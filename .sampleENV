@@ -1,0 +1,5 @@
+PORT=<portnumberhere>
+DATABASE_URL=<databaseOS>://localhost:<portnumberofdb>/<dbname>
+HEROKU_POSTGRESQL_URL=postgres://<url:portnumber/dbname>
+SECRET=<secrethere>
+
