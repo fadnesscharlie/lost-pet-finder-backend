@@ -46,7 +46,7 @@ app.use(express.json());
 app.use(authRoutes);
 // modularize later
 app.get("/", (req, res) => {
-  res.status(200).send("You have reached the Wizard!");
+  res.status(200).send("You have reached the Wizard! Whoo!");
 });
 app.get("/bad", (req, res) => {
   res.status(404).send({ notFound });
