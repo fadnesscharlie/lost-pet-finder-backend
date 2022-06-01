@@ -20,8 +20,6 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Checks][check-sheild]][check-url]
-[![codecov][codecov-sheild]][codecov-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -55,7 +53,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
->An Application secured by Auth that allows the users to post lost and found animals. Other users can post updates with Google Maps markers to show locations.
+>Backend applcation to talk to your frontend and store our pets/data in a relational postgreSQL database.
 
 ## UML
 
@@ -92,28 +90,9 @@ npm install npm@latest -g
 git clone git@github.com:Floof-finderslost-pet-finder-backend.git
 
 # Dev Database setup
-psql
-CREATE DATABASE "CC
-C
-C
-C
-C
-C
-C
-C
-CC
-C
+Set up postgreSQL on your machine, starting up your database, and create your database.
 
-CC
-C
-C
-
-C
-Create the DB and put it here";
-\q
-
-# Install dependencies
-npm install
+CREATE DATABASE "floofs"
 
 # Running locally
 npm run dev
@@ -124,30 +103,12 @@ npm run test
 
 ## Optional for using in Production Environment
 
-Request API Key from [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
-
-Use API key in the header of request.
-
 ```JavaScript
 INSTALLATION
 npm install axios --save
 
 REQUEST
 import axios from "axios";
-
-
-cccccc
-c
-c
-c
-c
-c
-cc UPDATE ME
-c
-c
-c
-c
-c
 
 const options = {
   method: 'GET',
@@ -167,16 +128,6 @@ axios.request(options).then(function (response) {
 
 Our application was developed to help bring animals back to their owners in the fastest way possible, using technology and not having to rely on word of mouth of friends and posters to post around town.
 
-### Heroku Deployment
-
-[Heroku Deployment]()
-
-<!-- TODO -->
-## Public Routes
-
-<!-- TODO -->
-## Auth Routes
-
 ## Sample.env
 
 ```JavaScript
@@ -184,31 +135,6 @@ PORT=<portnumberhere>
 DATABASE_URL=<databaseOS>://localhost:5432/<databasename>
 SECRET=<secretPWhere>
 ```
-
-### Post: Register your account
-
-```JavaScript
-http://localhost:3006???????????????????????/register
-
-Pass in your desired username, password
-
-ex.
-
-{
-  "username": "testUserName",
-  "password": "testPassword",
-}
-```
-
-<!-- ROADMAP 
-## Roadmap
-
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
--->
-
 See the [open issues](https://github.com/Floof-Finders/issues) for a full list of proposed features (and known issues).
 
 ## Testing
@@ -235,7 +161,6 @@ describe('Given /', () => {
     })
   })
 })
-
 ```
 
 <!-- CONTRIBUTING -->

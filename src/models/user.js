@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 // const uuid = require('uuid/v4');
 
-const SECRET = process.env.SECRET || 'oreo';
+const SECRET = process.env.SECRET;
 
 const userModel = (sequelize, DataTypes) => {
   const model = sequelize.define('Users', {
